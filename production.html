@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<body lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Solaire17</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    
+    <!-- FONT -->   
+    <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="owlcarousel/dist/assets/owl.carousel.min.css">
+	<link rel="stylesheet" href="owlcarousel/dist/assets/owl.carousel.css">
+	<link rel="stylesheet" href="owlcarousel/dist/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+   
+
+</head>
+<body>
+        <header class="header headerfaq">
+                <section>
+                    <section class="barre">
+                        <ul>
+                            <li><p><i class="far fa-envelope"></i></p></li>
+                            <li><p><a href="index.html"><img src="img/solairelogo.png" alt="logo solaire 17" /></a></p></li>
+                            <div class="infosheader">
+                                <li><input type="text" name="recherche" class="fa" placeholder="&#xf002" /></li>
+                                <li><p><i class="fas fa-phone"></i>0606060606</p></li>
+                            </div>
+                            <li><p><i class="fas fa-bars"></i></p></li>
+                        </ul>
+                    </section>
+                    <h1>Votre production</h1>
+                </section>
+        
+                <nav>
+                        <ul>
+                            <li><a href="index.html">Accueil<span></span></a></li>
+                            <li><a href="entreprise.html">L'Entreprise<span></span></a></li>
+                            <li><a href="prestations.html">Nos préstations<span></span></a></li>
+                            <li><a href="independance.html">Indépendances énergétiques<span></span></a></li>
+                            <li><a href="sav.html">S.A.V / Maintenance<span></span></a></li>
+                            <li><a href="contact.html">Contact<span></span></a></li>
+                        </ul>
+                </nav>
+                
+            </header>
+            <main class="bloc blocproduction">
+                    <form class="formproduction" id="formproduction" method="post" action="production.php"> 
+                        <h2>Calculer votre production d'électricité. <span>Vous obtiendrez un résultat immédiat.</span></h2>
+                        <p class="form_p">
+                            <label>Quel est votre département ? </label>
+                            <select id="departement" name="departement" onchange="getDepartement()">
+                                <option selected> </option>
+                                <option>Charente-Maritime</option>
+                                <option>Deux-Sèvres</option>
+                                <option>Charente</option>
+                                <option>Vienne</option>
+                                <option>Vendée</option>
+                            </select>
+                        </p>
+                        <p class="form_p">
+                            <label>Quel est votre secteur ? </label>
+                            <select id="ville" name="ville">
+                                    <option selected> - </option>
+                            </select>
+                        </p>
+                        <p class="form_p">
+                            <label>Quel est votre type d'installation ?</label>
+                            <select id="installation" name="installation">
+                                <option selected> </option>
+                                <option>Domestique</option>
+                                <option>Professionnelle</option>
+                            </select>
+                        </p>
+                        <p class="form_p">
+                            <label>Quel est votre exposition ?</label>
+                            <select id="exposition" name="exposition">
+                                <option selected> </option>
+                                <option>Sud</option>
+                                <option>Sud-Est ou Sud-Ouest</option>
+                                <option>Est ou Ouest</option>
+                            </select>
+                        </p>
+                        <p class="form_p">
+                            <label class="ombrage">Y a t-il une présence d'ombrage ? </label>
+                            <label>Oui</label><input type="radio" name="ombrage" value="Oui"/>
+                            <label>Non</label><input type="radio" name="ombrage" value="Non"/>
+                        </p>
+                        <p class="form_p">
+                            <label>De quelle pente se rapproche le plus votre toiture ?</label><br>
+                            <section class="toiture">
+                                <div>
+                                    <label>18 % Soit 10°</label><input class="radio" type="radio" name="toiture" value="18%"/>
+                                    <img src="img/toiture1.png"/>
+                                </div>
+                                <div>
+                                    <label>30% Soit 17°</label><input class="radio" type="radio" name="toiture" value="30%"/>
+                                    <img src="img/toiture2.png"/>
+                                </div>
+                                <div>
+                                    <label>58% Soit 30°</label><input class="radio" type="radio" name="toiture" value="58%"/>
+                                    <img src="img/toiture3.png"/>
+                                </div>
+                                <div>
+                                    <label>119% Soit 50°</label><input class="radio" type="radio" name="toiture" value="119%"/>
+                                    <img src="img/toiture4.png"/>
+                                </div>
+                            </section>
+                        </p>
+                        <p class="form_p">
+                            <label>Quel est votre type de couverture ?</label>
+                            <select id="couverture_1" name="couverture_1">
+                                <option selected> </option>
+                                <option>2 pants</option>
+                                <option>4 pants</option>
+                                <option>Toiture en L</option>
+                                <option>Autres</option>
+                            </select>
+                            <select id="couverture_2" name="couverture_2">
+                                <option selected> </option>
+                                <option>Tuiles</option>
+                                <option>Ardoises</option>
+                                <option>Fibrociment</option>
+                                <option>Bac acier</option>
+                                <option>Tôles ondulées</option>
+                                <option>Autres</option>
+                            </select>
+                        </p>
+                        <p class="form_p">
+                            <label>Quelle est la surface de votre maison (garage compris)?</label>
+                            <select id="surface" name="surface">
+                                <option selected> </option>
+                                <option>Moins de 70m²</option>
+                                <option>Entre 71m² et 100m²</option>
+                                <option>Entre 101m² et 130m²</option>
+                                <option>Entre 131m² et 160m²</option>
+                                <option>Plus de 161m²</option>
+                            </select>
+                        </p>
+                        <p class="form_p">
+                            <label>Combien y a t-il d'étages ? </label>
+                            <select id="etages" name="etages">
+                                <option selected> </option>
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>Plus de 3</option>
+                            </select>
+                        </p>
+                        <p id="test"></p>
+                        <div class="divbouton">
+                            <button type="submit" name="envoi"><span>Envoyer</span></button>
+                        </div>
+                    </form>
+                    <article class="photoentreprise">
+                        <p><img src="img/entreprise.png" alt="photoentreprise" /></p>
+                    </article>
+            </main>
+            <footer>
+                    <section>
+                        <h2>Lorem ipsum dolor sit amet</h2>
+                        <p>Lorem ipsum dolor sit amet</p>
+                        <p>Lorem ipsum dolor sit amet</p>
+                        <p>Lorem ipsum dolor sit amet</p>
+                        <p>Lorem ipsum dolor sit amet</p>
+                    </section>
+                    <section>
+                        <div>
+                            <h2>Lorem ipsum dolor sit amet</h2>
+                            <a href="">Contactez-moi !</a>
+                            <a href="">04 05 06 07 08</a>
+                            <p>Solaire 17<span>14 Rue du Colonel Michon</span><span>17000 LA ROCHELLE</span></p>
+                        </div>
+                    </section>
+            </footer>
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script>
+                function getDepartement() {
+                var x = document.getElementById("departement").value;
+                if( x == "Charente-Maritime"){
+                    ville = "<option selected> - </option><option>Jonzac</option><option>La Rochelle</option><option>Rochefort</option><option>Saintes</option><option>St Jean d'Angély</option>"
+                }
+                else if(x == "Charente"){
+                    ville = "<option selected> - </option><option>Angoulême</option><option>Barbezieux</option><option>Cognac</option><option>Confolens</option><option>Ruffec</option>"
+                }
+                else if(x == "Vienne"){
+                    ville = "<option selected> - </option><option>Chatellerault</option><option>Loudun</option><option>Montmorillon</option><option>Poitiers</option><option>Usson-du-Poitou</option>"
+                }
+                else if(x == "Deux-Sèvres"){
+                    ville = "<option selected> - </option><option>Bressuire</option><option>Melle</option><option>Niort</option><option>Parthenay</option><option>Thouars</option>"
+                }
+                else if(x == "Vendée"){
+                    ville = "<option selected> - </option><option>Challans</option><option>Fontenay Le Compte</option><option>La Roche-Sur-Yon</option><option>Les Herbiers</option><option>Les Sables d'Olonne</option>"
+                }
+                document.getElementById("ville").innerHTML = ville;
+                }
+            </script>
+            </body>
+            </html>
